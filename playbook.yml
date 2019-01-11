@@ -1,0 +1,8 @@
+---
+- name: Configure Networker backups for PostgreSQL databases
+  hosts: pg-servers
+  become: true
+  become_user: '{{ postgresql_user }}'
+  roles:
+    - { role: postgresql-nsr-backup, tags: postgresql_nsr_backup }
+
